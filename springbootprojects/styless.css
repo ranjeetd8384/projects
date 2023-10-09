@@ -1,0 +1,92 @@
+/* Reset some default styles */
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* Header styles */
+header {
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Main content styles */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Quiz question styles */
+.question {
+    margin-bottom: 20px;
+}
+
+.question h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.question p {
+    font-size: 18px;
+}
+
+.question ul {
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+.question li {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+/* Buttons */
+.start-button, .next-button, .restart-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.start-button:hover, .next-button:hover, .restart-button:hover {
+    background-color: #2980b9;
+}
+
+/* Result styles */
+.result, .feedback {
+    margin-top: 20px;
+}
+
+.result h2, .feedback h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.result p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.feedback p {
+    font-size: 16px;
+}
+
+/* Customize as needed */
