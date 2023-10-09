@@ -1,2 +1,2 @@
 # projects
-#check resoueces and controller folder
+check resources and controller folder
