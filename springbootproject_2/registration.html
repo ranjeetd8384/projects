@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/stylesfile.css" th:href="@{/stylesfile.css}">
+    <title>Registration - RIT College Tech Fest</title>
+</head>
+<body>
+    <header>
+        <h1>Register for RIT College Tech Fest</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index2">Home</a></li>
+            <li><a href="events">Events</a></li>
+            <li><a href="registration">Registration</a></li>
+        </ul>
+    </nav>
+    <section>
+        <h2>Registration Form</h2>
+        <form action="submit_registration.php" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="event">Select Event:</label>
+            <select id="event" name="event">
+                <option value="robotics">Robotics Competition</option>
+                <option value="web-dev">Web Development Workshop</option>
+            </select>
+
+            <a href="/submitted" class ="submit">Register</a>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2023 RIT College</p>
+    </footer>
+</body>
+</html>
