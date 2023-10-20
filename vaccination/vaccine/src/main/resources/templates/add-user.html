@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add User</title>
+</head>
+<body>
+    <h1>Add User</h1>
+    <form th:object="${user}" th:action="@{/add-user}" method="post">
+        <label>ID Details: <input type="text" th:field="*{idDetails}" /></label><br>
+        <p th:if="${#fields.hasErrors('idDetails')}" th:errors="*{idDetails}"></p>
+
+        <label>ID Type:</label>
+        <select th:field="*{idType}">
+            <option value="Aadhar">Aadhar</option>
+            <option value="PAN">PAN</option>
+        </select><br>
+        <p th:if="${#fields.hasErrors('idType')}" th:errors="*{idType}"></p>
+
+        <label>Name: <input type="text" th:field="*{name}" /></label><br>
+        <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
+
+        <label>Contact Number: <input type="text" th:field="*{contactNumber}" /></label><br>
+        <p th:if="${#fields.hasErrors('contactNumber')}" th:errors="*{contactNumber}"></p>
+
+        <label>Vaccine Name:</label>
+        <select th:field="*{vaccineName}">
+            <option value="Covaxin">Covaxin</option>
+            <option value="Covishield">Covishield</option>
+        </select><br>
+        <p th:if="${#fields.hasErrors('vaccineName')}" th:errors="*{vaccineName}"></p>
+
+        <button type="submit">Add User</button>
+    </form>
+</body>
+</html>
