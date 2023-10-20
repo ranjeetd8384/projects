@@ -16,7 +16,7 @@ The Vaccination Tracking System is a web application designed to help users keep
 
 - **Back-end:** Spring Boot, Thymeleaf templates, Java
 
-- **Database:** H2 Database (for demonstration purposes)
+- **Database:** MySQL Database (for demonstration purposes)
 
 ## Getting Started
 
