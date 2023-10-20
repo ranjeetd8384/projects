@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/stylesfile.css" th:href="@{/stylesfile.css}">
+    <title>form submitted</title>
+</head>
+<body>
+    <br><br><br>
+    <h1 style="text-align: center;">Login</h1><br><br>
+    <!-- <h3 style="text-align: center;">check mail for further updates</h3> -->
+    <!-- <h2>Login</h2> -->
+        <form action="/login" method="post">
+            
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="username" required>
+
+            <label for="userpassword">userpassword:</label>
+            <input type="userpassword" id="userpassword" name="userpassword" required>
+
+            <!-- <label for="password">password:</label>
+            <input type="password" id="password" name="upassword" required>
+
+            
+            <label for="contact">contact:</label>
+            <input type="contact" id="contact" name="ucontact" required>
+
+             -->
+         
+
+            <!-- <label for="event">Select Event:</label>
+            <select id="event" name="event">
+                <option value="robotics">Robotics Competition</option>
+                <option value="web-dev">Web Development Workshop</option>
+            </select> -->
+
+            <button class="submit"   type="submit" value="submit" >Login</button>
+        </form>
+</body>
+</html>

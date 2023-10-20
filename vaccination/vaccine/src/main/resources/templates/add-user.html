@@ -2,35 +2,91 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/style.css"> <!-- Your custom CSS file -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
     <title>Add User</title>
 </head>
 <body>
-    <h1>Add User</h1>
-    <form th:object="${user}" th:action="@{/add-user}" method="post">
-        <label>ID Details: <input type="text" th:field="*{idDetails}" /></label><br>
-        <p th:if="${#fields.hasErrors('idDetails')}" th:errors="*{idDetails}"></p>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <a class="navbar-brand" href="#">Vaccination Tracking</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/add-user}">Add User</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/show-all-users}">Show All Users</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-        <label>ID Type:</label>
-        <select th:field="*{idType}">
-            <option value="Aadhar">Aadhar</option>
-            <option value="PAN">PAN</option>
-        </select><br>
-        <p th:if="${#fields.hasErrors('idType')}" th:errors="*{idType}"></p>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1 class="text-center">Add User</h1>
+                <form th:object="${user}" th:action="@{/add-user}" method="post" class="needs-validation" novalidate>
+                    <div class="form-group">
+                        <label for="idDetails">ID Details</label>
+                        <input type="text" class="form-control" id="idDetails" th:field="*{idDetails}" required>
+                        <div class="invalid-feedback">
+                            ID Details is required.
+                        </div>
+                    </div>
 
-        <label>Name: <input type="text" th:field="*{name}" /></label><br>
-        <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
+                    <div class="form-group">
+                        <label for="idType">ID Type</label>
+                        <select class="form-control" id="idType" th:field="*{idType}" required>
+                            <option value="">Select ID Type</option>
+                            <option value="Aadhar">Aadhar</option>
+                            <option value="PAN">PAN</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please select an ID Type.
+                        </div>
+                    </div>
 
-        <label>Contact Number: <input type="text" th:field="*{contactNumber}" /></label><br>
-        <p th:if="${#fields.hasErrors('contactNumber')}" th:errors="*{contactNumber}"></p>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" th:field="*{name}" required>
+                        <div class="invalid-feedback">
+                            Name is required.
+                        </div>
+                    </div>
 
-        <label>Vaccine Name:</label>
-        <select th:field="*{vaccineName}">
-            <option value="Covaxin">Covaxin</option>
-            <option value="Covishield">Covishield</option>
-        </select><br>
-        <p th:if="${#fields.hasErrors('vaccineName')}" th:errors="*{vaccineName}"></p>
+                    <div class "form-group">
+                        <label for="contactNumber">Contact Number</label>
+                        <input type="text" class="form-control" id="contactNumber" th:field="*{contactNumber}" required>
+                        <div class="invalid-feedback">
+                            Valid Contact Number is required.
+                        </div>
+                    </div>
 
-        <button type="submit">Add User</button>
-    </form>
+                    <div class="form-group">
+                        <label for="vaccineName">Vaccine Name</label>
+                        <select class="form-control" id="vaccineName" th:field="*{vaccineName}" required>
+                            <option value="">Select Vaccine Name</option>
+                            <option value="Covaxin">Covaxin</option>
+                            <option value="Covishield">Covishield</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please select a Vaccine Name.
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block mt-3">Add User</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>

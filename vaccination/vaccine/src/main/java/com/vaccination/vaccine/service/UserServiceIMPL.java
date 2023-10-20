@@ -23,4 +23,9 @@ public class UserServiceIMPL implements UserService {
     public List<UserDetails> getAllUsers() {
         return userRepository.findAll();
     }
+
+    @Override
+    public void deleteUserById(Long id) {
+       userRepository.deleteById(id);
+    }
 }

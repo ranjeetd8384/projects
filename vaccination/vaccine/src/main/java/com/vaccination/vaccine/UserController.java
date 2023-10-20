@@ -1,6 +1,5 @@
 package com.vaccination.vaccine;
 
-
 import com.vaccination.vaccine.model.UserDetails;
 import com.vaccination.vaccine.service.UserService;
 
@@ -11,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -35,7 +35,7 @@ public class UserController {
         if (result.hasErrors()) {
             return "add-user"; // Return to the form with validation errors
         }
-        
+
         userService.addUser(userDetails);
         return "redirect:/show-all-users";
     }
@@ -44,5 +44,11 @@ public class UserController {
     public String showAllUsers(Model model) {
         model.addAttribute("users", userService.getAllUsers());
         return "show-all-users";
+    }
+
+    @GetMapping("/delete-user/{id}")
+    public String deleteUser(@PathVariable Long id) {
+        userService.deleteUserById(id);
+        return "redirect:/show-all-users";
     }
 }
