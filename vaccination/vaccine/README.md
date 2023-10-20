@@ -12,7 +12,7 @@ The Vaccination Tracking System is a web application designed to help users keep
 
 ## Technologies Used
 
-- **Front-end:** HTML, Thymeleaf, Bootstrap
+- **Front-end:** HTML, CSS, Thymeleaf, Bootstrap
 
 - **Back-end:** Spring Boot, Thymeleaf templates, Java
 
